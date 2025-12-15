@@ -1,0 +1,88 @@
+spring:
+  application:
+    name: database-backup-utility
+
+  main:
+    web-application-type: none
+    banner-mode: off
+
+# Backup Configuration
+backup:
+  default-output-dir: ./backups
+  temp-dir: ./temp
+  max-parallel-backups: 3
+
+  compression:
+    enabled: true
+    default-format: gzip # gzip, zip, tar
+    level: 6 # 0-9
+
+  retention:
+    days: 30
+    max-backups: 50
+
+# Storage Configuration
+storage:
+  default-provider: local # local, s3, gcs, azure
+
+  local:
+    base-path: ./backups
+
+  s3:
+    enabled: false
+    bucket-name: ${AWS_S3_BUCKET:}
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY:}
+    secret-key: ${AWS_SECRET_KEY:}
+
+  gcs:
+    enabled: false
+    bucket-name: ${GCS_BUCKET:}
+    project-id: ${GCS_PROJECT_ID:}
+    credentials-path: ${GCS_CREDENTIALS_PATH:}
+
+  azure:
+    enabled: false
+    container-name: ${AZURE_CONTAINER:}
+    connection-string: ${AZURE_CONNECTION_STRING:}
+
+# Notification Configuration
+notification:
+  slack:
+    enabled: false
+    webhook-url: ${SLACK_WEBHOOK_URL:}
+    channel: ${SLACK_CHANNEL:#backups}
+
+  email:
+    enabled: false
+    host: ${EMAIL_HOST:smtp.gmail.com}
+    port: ${EMAIL_PORT:587}
+    username: ${EMAIL_USERNAME:}
+    password: ${EMAIL_PASSWORD:}
+    from: ${EMAIL_FROM:backup@example.com}
+    to: ${EMAIL_TO:admin@example.com}
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.dbbackup: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: ./logs/backup.log
+    max-size: 10MB
+    max-history: 30
+
+# Security
+security:
+  encryption:
+    enabled: true
+    algorithm: AES
+    key: ${ENCRYPTION_KEY:changeme12345678} # Must be 16, 24, or 32 bytes
+
+# Scheduling
+scheduler:
+  enabled: true
+  thread-pool-size: 5
