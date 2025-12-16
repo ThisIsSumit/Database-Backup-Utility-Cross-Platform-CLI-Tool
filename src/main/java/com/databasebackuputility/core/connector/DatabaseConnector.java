@@ -1,29 +1,57 @@
 package com.databasebackuputility.core.connector;
 
+import com.databasebackuputility.model.BackupType;
 import com.databasebackuputility.model.DatabaseConfig;
-import com.databasebackuputility.model.DatabaseType;
 
-import java.util.List;
+import java.io.OutputStream;
 
+/**
+ * Interface for database connectors
+ * Each database type implements this interface to provide backup/restore functionality
+ */
 public interface DatabaseConnector {
 
-    DatabaseType supportedType();
+    /**
+     * Test database connection
+     * @param config Database configuration
+     * @return true if connection successful, false otherwise
+     */
+    boolean testConnection(DatabaseConfig config);
 
     /**
-     * Perform a database dump and return a path to a produced dump file (or directory).
+     * Execute backup operation
+     * @param config Database configuration
+     * @param backupType Type of backup (full, incremental, differential)
+     * @param outputStream Stream to write backup data
+     * @throws Exception if backup fails
      */
-    String backup(DatabaseConfig config);
+    void backup(DatabaseConfig config, BackupType backupType, OutputStream outputStream) throws Exception;
 
     /**
-     * Restore the database from a dump file (or directory).
+     * Execute restore operation
+     * @param config Database configuration
+     * @param backupFilePath Path to backup file
+     * @throws Exception if restore fails
      */
-    void restore(DatabaseConfig config, String dumpPath);
+    void restore(DatabaseConfig config, String backupFilePath) throws Exception;
 
     /**
-     * Optional: list logical backups known to the database system itself.
-     * Many implementations may return an empty list and rely on StorageService instead.
+     * Get database size in bytes
+     * @param config Database configuration
+     * @return Database size in bytes
+     * @throws Exception if unable to get size
      */
-    default List<String> listInternalBackups(DatabaseConfig config) {
-        return List.of();
-    }
+    long getDatabaseSize(DatabaseConfig config) throws Exception;
+
+    /**
+     * Check if incremental backup is supported
+     * @return true if supported
+     */
+    boolean supportsIncrementalBackup();
+
+    /**
+     * Check if differential backup is supported
+     * @return true if supported
+     */
+    boolean supportsDifferentialBackup();
 }

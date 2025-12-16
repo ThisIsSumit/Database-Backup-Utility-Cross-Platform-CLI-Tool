@@ -1,60 +1,82 @@
 package com.databasebackuputility.cli;
 
-import com.databasebackuputility.cli.command.BackupCommand;
-import com.databasebackuputility.cli.command.ListCommand;
-import com.databasebackuputility.cli.command.RestoreCommand;
-import java.util.Arrays;
+import com.databasebackuputility.cli.command.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.stereotype.Component;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
 
+/**
+ * Main CLI runner that coordinates all commands
+ */
 @Component
-public class CliRunner implements CommandLineRunner {
+@Command(
+        name = "dbbackup",
+        description = "Database Backup and Restore Utility",
+        version = "1.0.0",
+        mixinStandardHelpOptions = true,
+        subcommands = {
+                BackupCommand.class,
+                RestoreCommand.class,
+                ListCommand.class,
+                CommandLine.HelpCommand.class
+        }
+)
+@RequiredArgsConstructor
+public class CliRunner implements CommandLineRunner, ExitCodeGenerator {
 
-    private final BackupCommand backupCommand;
-    private final RestoreCommand restoreCommand;
-    private final ListCommand listCommand;
-
-    public CliRunner(BackupCommand backupCommand, RestoreCommand restoreCommand, ListCommand listCommand) {
-        this.backupCommand = backupCommand;
-        this.restoreCommand = restoreCommand;
-        this.listCommand = listCommand;
-    }
+    private final CommandLine.IFactory factory;
+    private int exitCode;
 
     @Override
     public void run(String... args) {
-        if (args == null || args.length == 0) {
-            printHelp();
-            return;
+        if (args.length == 0) {
+            printBanner();
+            args = new String[]{"--help"};
         }
 
-        String command = args[0].trim().toLowerCase();
-        String[] rest = Arrays.copyOfRange(args, 1, args.length);
+        CommandLine cmd = new CommandLine(this, factory);
+        cmd.setExecutionExceptionHandler(this::handleExecutionException);
 
-        switch (command) {
-            case "backup" -> backupCommand.execute(rest);
-            case "restore" -> restoreCommand.execute(rest);
-            case "list" -> listCommand.execute(rest);
-            case "help" -> printHelp();
-            default -> {
-                System.err.println("Unknown command: " + command);
-                printHelp();
-            }
-        }
+        exitCode = cmd.execute(args);
     }
 
-    private void printHelp() {
-        System.out.println("""
-        database-backup-utility CLI
-        Usage:
-          backup  <options>
-          restore <options>
-          list    <options>
-          help
+    @Override
+    public int getExitCode() {
+        return exitCode;
+    }
 
-        Examples:
-          backup  --db=MYSQL --name=mydb
-          restore --db=POSTGRESQL --file=backup.zip
-          list    --db=MONGODB
-        """);
+    /**
+     * Handle execution exceptions
+     */
+    private int handleExecutionException(Exception ex, CommandLine cmd,
+                                         CommandLine.ParseResult parseResult) {
+        cmd.getErr().println(cmd.getColorScheme().errorText("Error: " + ex.getMessage()));
+
+        if (cmd.getCommandSpec().findOption("--verbose") != null) {
+            ex.printStackTrace(cmd.getErr());
+        }
+
+        return cmd.getExitCodeExceptionMapper() != null
+                ? cmd.getExitCodeExceptionMapper().getExitCode(ex)
+                : cmd.getCommandSpec().exitCodeOnExecutionException();
+    }
+
+    /**
+     * Print application banner
+     */
+    private void printBanner() {
+        System.out.println();
+        System.out.println("╔═══════════════════════════════════════════════════════════╗");
+        System.out.println("║                                                           ║");
+        System.out.println("║       Database Backup & Restore Utility v1.0.0           ║");
+        System.out.println("║                                                           ║");
+        System.out.println("║   Supports: MySQL, PostgreSQL, MongoDB, SQLite           ║");
+        System.out.println("║   Features: Compression, Cloud Storage, Scheduling       ║");
+        System.out.println("║                                                           ║");
+        System.out.println("╚═══════════════════════════════════════════════════════════╝");
+        System.out.println();
     }
 }
