@@ -1,7 +1,9 @@
 package com.databasebackuputility.cli;
 
-import com.databasebackuputility.cli.command.*;
-import lombok.RequiredArgsConstructor;
+import com.databasebackuputility.cli.command.BackupCommand;
+import com.databasebackuputility.cli.command.ListCommand;
+import com.databasebackuputility.cli.command.RestoreCommand;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.stereotype.Component;
@@ -24,11 +26,14 @@ import picocli.CommandLine.Command;
                 CommandLine.HelpCommand.class
         }
 )
-@RequiredArgsConstructor
 public class CliRunner implements CommandLineRunner, ExitCodeGenerator {
 
     private final CommandLine.IFactory factory;
     private int exitCode;
+
+    public CliRunner(@Qualifier("picocliSpringFactoryImpl") CommandLine.IFactory factory) {
+        this.factory = factory;
+    }
 
     @Override
     public void run(String... args) {

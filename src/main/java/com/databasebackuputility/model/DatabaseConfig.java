@@ -30,7 +30,7 @@ public class DatabaseConfig {
     public String getConnectionUrl() {
         switch (type) {
             case MYSQL:
-                return String.format("jdbc:mysql://%s:%d/%s?useSSL=false&serverTimezone=UTC",
+                return String.format("jdbc:mysql://%s:%d/%s?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
                         host, port, databaseName);
 
             case POSTGRESQL:

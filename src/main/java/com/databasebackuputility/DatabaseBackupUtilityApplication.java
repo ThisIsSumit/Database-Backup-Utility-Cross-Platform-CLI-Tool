@@ -13,8 +13,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class DatabaseBackupUtilityApplication {
 
+
     public static void main(String[] args) {
-        SpringApplication.run(DatabaseBackupUtilityApplication.class, args);
+        SpringApplication app = new SpringApplication(DatabaseBackupUtilityApplication.class);
+        app.setBannerMode(org.springframework.boot.Banner.Mode.OFF);
+
+        System.exit(SpringApplication.exit(app.run(args)));
+//        SpringApplication.run(DatabaseBackupUtilityApplication.class, args);
     }
 
 }

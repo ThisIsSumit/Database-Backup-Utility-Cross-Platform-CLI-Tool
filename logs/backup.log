@@ -1,10 +1,10 @@
-2025-12-16 11:00:04 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 9920 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-16 11:00:04 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-16 11:00:05 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-16 11:00:05 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-16 11:00:05 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-16 11:00:05 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-16 11:00:05 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2025-12-17 11:02:43 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 7656 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:02:43 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:02:45 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:02:45 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -12,14 +12,169 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2025-12-16 11:00:05 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-16 11:00:05 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-16 11:00:05 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@12e0f1cb
-2025-12-16 11:00:06 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-16 11:00:06 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-16 11:00:06 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.142 seconds (process running for 4.987)
-2025-12-16 11:00:41 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-16 11:00:41 [SpringApplicationShutdownHook] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-16 11:00:41 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-16 11:00:41 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-16 11:00:41 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1caa9eb6
+2025-12-17 11:02:45 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:02:46 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.781 seconds (process running for 6.81)
+2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:02:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:08:00 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 25652 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:08:00 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:08:02 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:08:02 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3291b443
+2025-12-17 11:08:02 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:08:02 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.287 seconds (process running for 5.585)
+2025-12-17 11:08:03 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Public Key Retrieval is not allowed
+2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:08:03 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:14:40 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 26756 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:14:40 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:14:42 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:14:42 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3722c145
+2025-12-17 11:14:42 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:14:42 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.431 seconds (process running for 6.244)
+2025-12-17 11:14:42 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Public Key Retrieval is not allowed
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:14:42 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:20:55 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 21268 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:20:55 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:20:56 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:20:56 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@136965e3
+2025-12-17 11:20:57 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:20:57 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 5.162 seconds (process running for 7.164)
+2025-12-17 11:20:57 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
+2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:20:57 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:25:44 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 22500 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:25:44 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:25:45 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:25:45 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3050ac2f
+2025-12-17 11:25:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:25:46 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.541 seconds (process running for 4.042)
+2025-12-17 11:25:46 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
+2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:25:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:30:17 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 22848 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:30:17 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:30:19 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:30:19 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1caa9eb6
+2025-12-17 11:30:19 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:30:19 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.956 seconds (process running for 4.66)
+2025-12-17 11:30:20 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
+2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:30:20 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-12-17 11:33:31 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 16436 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2025-12-17 11:33:31 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2025-12-17 11:33:33 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2025-12-17 11:33:33 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2e869098
+2025-12-17 11:33:33 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-17 11:33:33 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.705 seconds (process running for 4.209)
+2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:33:34 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.

@@ -78,6 +78,7 @@ public class BackupCommand implements Callable<Integer> {
 
             // Build database configuration
             DatabaseConfig config = buildDatabaseConfig();
+            System.out.println(config.toString());
 
             // Test connection if requested
             if (testConnection) {
