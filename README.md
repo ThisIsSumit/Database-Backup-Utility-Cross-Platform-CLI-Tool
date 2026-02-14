@@ -488,14 +488,12 @@ logging:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
 
-This project is licensed under the MIT License.
 
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/yourusername/database-backup-utility/issues
+- GitHub Issues: https://github.com/ThisIsSumit/database-backup-utility/issues
 - Email: support@example.com
 
 ## Changelog

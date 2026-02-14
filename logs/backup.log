@@ -1,10 +1,12 @@
-2025-12-17 11:02:43 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 7656 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:02:43 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:02:45 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:02:45 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2026-02-14 16:39:58 [main] DEBUG o.s.boot.ApplicationEnvironment - Activating profiles []
+2026-02-14 16:39:59 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 23384 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
+2026-02-14 16:39:59 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-14 16:39:59 [main] DEBUG o.s.boot.SpringApplication - Loading source class com.databasebackuputility.DatabaseBackupUtilityApplication
+2026-02-14 16:40:00 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-02-14 16:40:00 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-02-14 16:40:00 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
+2026-02-14 16:40:00 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-02-14 16:40:00 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -12,169 +14,473 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:02:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1caa9eb6
-2025-12-17 11:02:45 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:02:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:02:46 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.781 seconds (process running for 6.81)
-2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:02:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:02:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:08:00 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 25652 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:08:00 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:08:02 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:08:02 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2026-02-14 16:40:00 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-02-14 16:40:00 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
+2026-02-14 16:40:00 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4b0f2299
+2026-02-14 16:40:00 [main] DEBUG o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
+2026-02-14 16:40:00 [main] DEBUG o.s.b.a.AutoConfigurationPackages - @EnableAutoConfiguration was declared on a class in the package 'com.databasebackuputility'. Automatic @Repository and @Entity scanning is enabled.
+2026-02-14 16:40:01 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-02-14 16:40:01 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-02-14 16:40:01 [main] DEBUG o.s.b.a.l.ConditionEvaluationReportLogger - 
 
-2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:08:02 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3291b443
-2025-12-17 11:08:02 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:08:02 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:08:02 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.287 seconds (process running for 5.585)
-2025-12-17 11:08:03 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Public Key Retrieval is not allowed
-2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:08:03 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:08:03 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:14:40 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 26756 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:14:40 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:14:42 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:14:42 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:14:42 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3722c145
-2025-12-17 11:14:42 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:14:42 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.431 seconds (process running for 6.244)
-2025-12-17 11:14:42 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Public Key Retrieval is not allowed
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:14:42 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:14:42 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:20:55 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 21268 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:20:55 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:20:56 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:20:56 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+============================
+CONDITIONS EVALUATION REPORT
+============================
 
-2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:20:56 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:20:56 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@136965e3
-2025-12-17 11:20:57 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:20:57 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 5.162 seconds (process running for 7.164)
-2025-12-17 11:20:57 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
-2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:20:57 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:20:57 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:25:44 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 22500 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:25:44 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:25:45 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:25:45 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:25:45 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:25:45 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3050ac2f
-2025-12-17 11:25:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:25:46 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.541 seconds (process running for 4.042)
-2025-12-17 11:25:46 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
-2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:25:46 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:25:46 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:30:17 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 22848 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:30:17 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:30:19 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:30:19 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+Positive matches:
+-----------------
 
-2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:30:19 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1caa9eb6
-2025-12-17 11:30:19 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:30:19 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:30:19 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.956 seconds (process running for 4.66)
-2025-12-17 11:30:20 [main] ERROR c.d.core.connector.MySqlConnector - MySQL connection test failed: Access denied for user 'root'@'localhost' (using password: YES)
-2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:30:20 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:30:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2025-12-17 11:33:31 [main] INFO  c.d.DatabaseBackupUtilityApplication - Starting DatabaseBackupUtilityApplication using Java 23.0.2 with PID 16436 (C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility\target\classes started by sumit in C:\Users\sumit\Downloads\Desktop\Spring Boot\database-backup-utility)
-2025-12-17 11:33:31 [main] INFO  c.d.DatabaseBackupUtilityApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2025-12-17 11:33:33 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.1 created.
-2025-12-17 11:33:33 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+   AopAutoConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.auto=true) matched (OnPropertyCondition)
 
-2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-12-17 11:33:33 [main] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.1
-2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2e869098
-2025-12-17 11:33:33 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-12-17 11:33:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-12-17 11:33:33 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 2.705 seconds (process running for 4.209)
-2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:33:34 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2025-12-17 11:33:34 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration matched:
+      - @ConditionalOnClass found required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration matched:
+      - @ConditionalOnClass found required class 'com.google.gson.Gson' (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter' (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration#jacksonJsonMapper matched:
+      - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration#jsonMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JsonProblemDetailsConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+      - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) found bean 'jacksonJsonMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration#jacksonJsonHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter ignored: ?; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) matched (OnPropertyCondition)
+
+   JmxAutoConfiguration#mbeanExporter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration#mbeanServer matched:
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration#objectNamingStrategy matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   JtaAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.transaction.Transaction' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.jta.enabled=true) matched (OnPropertyCondition)
+
+   LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+      - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
+      - @ConditionalOnBooleanProperty (spring.persistence.exceptiontranslation.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PicocliAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'picocli.CommandLine' (OnClassCondition)
+
+   PicocliAutoConfiguration#picocliSpringFactory matched:
+      - @ConditionalOnMissingBean (types: picocli.CommandLine$IFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PicocliAutoConfiguration#picocliSpringFactoryImpl matched:
+      - @ConditionalOnMissingBean (types: picocli.spring.PicocliSpringFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   QuartzAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.quartz.Scheduler', 'org.springframework.scheduling.quartz.SchedulerFactoryBean', 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   QuartzAutoConfiguration#quartzScheduler matched:
+      - @ConditionalOnMissingBean (types: org.springframework.scheduling.quartz.SchedulerFactoryBean; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.application.admin.enabled=true) matched (OnPropertyCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration#springApplicationAdminRegistrar matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SslAutoConfiguration#sslBundleRegistry matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.ssl.SslBundleRegistry,org.springframework.boot.ssl.SslBundles; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (TaskExecutorConfigurations.OnExecutorCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.ThreadPoolTaskExecutorBuilderConfiguration#threadPoolTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter matched:
+      - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.scheduling.config.internalScheduledAnnotationProcessor' (OnBeanCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskSchedulingConfigurations.TaskSchedulerConfiguration matched:
+      - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.scheduling.config.internalScheduledAnnotationProcessor'; @ConditionalOnMissingBean (types: org.springframework.scheduling.TaskScheduler,java.util.concurrent.ScheduledExecutorService; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingConfigurations.TaskSchedulerConfiguration#taskScheduler matched:
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskSchedulingConfigurations.ThreadPoolTaskSchedulerBuilderConfiguration#threadPoolTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.validation.executable.ExecutableValidator' (OnClassCondition)
+      - @ConditionalOnResource found location classpath:META-INF/services/jakarta.validation.spi.ValidationProvider (OnResourceCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: jakarta.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#methodValidationPostProcessor matched:
+      - @ConditionalOnMissingBean (types: org.springframework.validation.beanvalidation.MethodValidationPostProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+   AopAutoConfiguration.ClassProxyingConfiguration:
+      Did not match:
+         - @ConditionalOnMissingClass found unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   DataJpaRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans of type javax.sql.DataSource (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+         - @ConditionalOnBooleanProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+
+   DataRepositoryMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean did not find required type 'io.micrometer.core.instrument.MeterRegistry' (OnBeanCondition)
+
+   DataSourceHealthContributorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.health.autoconfigure.contributor.ConditionalOnEnabledHealthIndicator' (OnClassCondition)
+
+   DataSourceInitializationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+         - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+
+   DataSourcePoolMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataWebAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'org.springframework.data.web.PageableHandlerMethodArgumentResolver', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   DispatcherServletAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+
+   ErrorMvcAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration.GsonHttpMessageConverterConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.JacksonJsonbUnavailable NoneNestedConditions 1 matched 2 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JsonbPreferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jsonb) did not find property 'spring.http.converters.preferred-json-mapper'; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.Jackson2Available @ConditionalOnBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) did not find any beans of type org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JacksonAvailable @ConditionalOnBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter; SearchStrategy: all) found bean 'jacksonJsonHttpMessageConverter'; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.GsonPreferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=gson) did not find property 'spring.http.converters.preferred-json-mapper' (GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition)
+
+   HibernateMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+   HttpEncodingAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+
+   Jackson2HttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition.JacksonUnavailable @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter; SearchStrategy: all) found beans of type 'org.springframework.http.converter.json.JacksonJsonHttpMessageConverter' jacksonJsonHttpMessageConverter; NestedCondition on Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition.Jackson2Preferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson2) did not find property 'spring.http.converters.preferred-json-mapper' (Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+   Jackson2HttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.CborConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.cbor.CBORMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.XmlConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonXmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JdbcClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'spring.datasource.jndi-name' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+   JndiJtaConfiguration:
+      Did not match:
+         - @ConditionalOnJndi JNDI environment is not available (OnJndiCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.transaction.jta.JtaTransactionManager' (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+
+   KotlinSerializationHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'kotlinx.serialization.Serializable', 'kotlinx.serialization.json.Json' (OnClassCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MultipartAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'jakarta.servlet.MultipartConfigElement' (OnClassCondition)
+
+   ProjectInfoAutoConfiguration#buildProperties:
+      Did not match:
+         - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+
+   ProjectInfoAutoConfiguration#gitProperties:
+      Did not match:
+         - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+   QuartzAutoConfiguration.JdbcStoreTypeConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.quartz.job-store-type=jdbc) did not find property 'spring.quartz.job-store-type' (OnPropertyCondition)
+
+   QuartzEndpointAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   ServletHttpExchangesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean did not find required type 'org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository' (OnBeanCondition)
+
+   ServletManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties' (OnClassCondition)
+
+   ServletMappingsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerWrapperConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans of type org.springframework.scheduling.annotation.AsyncConfigurer (OnBeanCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder' simpleAsyncTaskExecutorBuilder (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder' simpleAsyncTaskSchedulerBuilder (OnBeanCondition)
+
+   TaskSchedulingConfigurations.TaskSchedulerConfiguration#taskSchedulerVirtualThreads:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   TomcatMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.binder.tomcat.TomcatMetrics' (OnClassCondition)
+
+   TomcatReactiveManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+   TomcatReactiveWebServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+
+   TomcatServletManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+   TomcatServletWebServerAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'jakarta.servlet.ServletRequest', 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol', 'org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory' (OnClassCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans of type org.springframework.transaction.TransactionManager (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration:
+      Did not match:
+         - Ancestor org.springframework.boot.transaction.autoconfigure.TransactionAutoConfiguration$EnableTransactionManagementConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+         - Ancestor org.springframework.boot.transaction.autoconfigure.TransactionAutoConfiguration$EnableTransactionManagementConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   WebMvcHealthEndpointExtensionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.health.actuate.endpoint.HealthEndpoint' (OnClassCondition)
+
+   WebMvcMappingsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   WebMvcObservationAutoConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'org.springframework.web.servlet.DispatcherServlet', 'io.micrometer.observation.Observation' (OnClassCondition)
+
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.boot.jdbc.XADataSourceWrapper; SearchStrategy: all) did not find any beans of type org.springframework.boot.jdbc.XADataSourceWrapper (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'jakarta.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
+
+    org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+    org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+    org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+    org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+2026-02-14 16:40:01 [main] INFO  c.d.DatabaseBackupUtilityApplication - Started DatabaseBackupUtilityApplication in 3.184 seconds (process running for 5.57)
+2026-02-14 16:40:01 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2026-02-14 16:40:01 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2026-02-14 16:40:01 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-02-14 16:40:01 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-02-14 16:40:01 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-02-14 16:40:01 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-02-14 16:40:01 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
