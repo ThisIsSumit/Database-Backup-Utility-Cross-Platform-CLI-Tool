@@ -493,8 +493,8 @@ logging:
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/ThisIsSumit/database-backup-utility/issues
-- Email: support@example.com
+- GitHub Issues: https://github.com/ThisIsSumit/Database-Backup-Utility-Cross-Platform-CLI-Tool/issues
+- Email: sumitkumar453827@gmail.com
 
 ## Changelog
 
