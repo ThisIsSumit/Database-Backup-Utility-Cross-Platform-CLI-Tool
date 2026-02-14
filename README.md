@@ -87,7 +87,7 @@ brew install mongodb-database-tools
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/database-backup-utility.git
+git clone https://github.com/ThisIsSumit/database-backup-utility.git
 cd database-backup-utility
 ```
 

@@ -4,6 +4,7 @@ import com.databasebackuputility.core.connector.DatabaseConnector;
 import com.databasebackuputility.model.BackupResult;
 import com.databasebackuputility.model.BackupType;
 import com.databasebackuputility.model.DatabaseConfig;
+import com.databasebackuputility.model.DatabaseType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -145,18 +146,20 @@ public class BackupService {
         String timestamp = LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
-        String fileName = String.format("%s_%s_%s.sql",
+        String extension = config.getType() == DatabaseType.MONGODB ? "archive" : "sql";
+
+        String fileName = String.format("%s_%s_%s.%s",
                 config.getType().getName(),
                 config.getDatabaseName(),
-                timestamp);
+                timestamp,
+                extension);
 
         File tempDir = new File(System.getProperty("java.io.tmpdir"), "dbbackup");
-        if (!tempDir.exists()) {
-            tempDir.mkdirs();
-        }
+        if (!tempDir.exists()) tempDir.mkdirs();
 
         return new File(tempDir, fileName);
     }
+
 
     /**
      * Get database size

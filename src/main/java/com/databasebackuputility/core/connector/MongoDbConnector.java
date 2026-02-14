@@ -31,30 +31,27 @@ public class MongoDbConnector implements DatabaseConnector {
         }
     }
 
-
     @Override
     public void backup(DatabaseConfig config, BackupType backupType, OutputStream outputStream) throws Exception {
         log.info("Starting MongoDB backup for database: {}", config.getDatabaseName());
 
         // Build mongodump command
-        ProcessBuilder pb = new ProcessBuilder();
-
+        ProcessBuilder pb;
         if (config.getUsername() != null && config.getPassword() != null) {
-            pb.command(
-                    "mongodump",
+            pb = new ProcessBuilder(
+                    "C:\\mongodb-tools\\bin\\mongodump",
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
                     "--username=" + config.getUsername(),
                     "--password=" + config.getPassword(),
-                    "--authenticationDatabase=" + (config.getAuthDatabase() != null ?
-                            config.getAuthDatabase() : "admin"),
+                    "--authenticationDatabase=" + (config.getAuthDatabase() != null ? config.getAuthDatabase() : "admin"),
                     "--db=" + config.getDatabaseName(),
-                    "--archive",
-                    "--gzip"
+                    "--archive",  // output as mongodump archive
+                    "--gzip"      // compress archive
             );
         } else {
-            pb.command(
-                    "mongodump",
+            pb = new ProcessBuilder(
+                    "C:\\mongodb-tools\\bin\\mongodump",
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
                     "--db=" + config.getDatabaseName(),
@@ -63,9 +60,10 @@ public class MongoDbConnector implements DatabaseConnector {
             );
         }
 
-        pb.redirectErrorStream(true);
+        pb.redirectErrorStream(true); // merge stdout and stderr
         Process process = pb.start();
 
+        // Pipe output directly to provided OutputStream
         try (InputStream is = process.getInputStream()) {
             byte[] buffer = new byte[8192];
             int bytesRead;
@@ -86,42 +84,47 @@ public class MongoDbConnector implements DatabaseConnector {
     public void restore(DatabaseConfig config, String backupFilePath) throws Exception {
         log.info("Starting MongoDB restore from: {}", backupFilePath);
 
-        ProcessBuilder pb = new ProcessBuilder();
+        File backupFile = new File(backupFilePath);
+        if (!backupFile.exists()) {
+            throw new IOException("Backup file not found: " + backupFilePath);
+        }
 
+        // Build mongorestore command
+        ProcessBuilder pb;
+        String targetDb = config.getDatabaseName(); // target DB
         if (config.getUsername() != null && config.getPassword() != null) {
-            pb.command(
-                    "mongorestore",
+            pb = new ProcessBuilder(
+                    "C:\\mongodb-tools\\bin\\mongorestore",
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
                     "--username=" + config.getUsername(),
                     "--password=" + config.getPassword(),
-                    "--authenticationDatabase=" + (config.getAuthDatabase() != null ?
-                            config.getAuthDatabase() : "admin"),
-                    "--db=" + config.getDatabaseName(),
-                    "--archive=" + backupFilePath,
+                    "--authenticationDatabase=" + (config.getAuthDatabase() != null ? config.getAuthDatabase() : "admin"),
+                    "--archive=" + backupFile.getAbsolutePath(),
                     "--gzip",
-                    "--drop"
+                    "--drop",
+                    "--nsInclude=" + targetDb + ".*"  // map all collections to target DB
             );
         } else {
-            pb.command(
-                    "mongorestore",
+            pb = new ProcessBuilder(
+                    "C:\\mongodb-tools\\bin\\mongorestore",
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
-                    "--db=" + config.getDatabaseName(),
-                    "--archive=" + backupFilePath,
+                    "--archive=" + backupFile.getAbsolutePath(),
                     "--gzip",
-                    "--drop"
+                    "--drop",
+                    "--nsInclude=" + targetDb + ".*"
             );
         }
 
         pb.redirectErrorStream(true);
         Process process = pb.start();
 
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()))) {
+        // Capture output
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                log.debug(line);
+                log.info(line);
             }
         }
 
@@ -132,6 +135,7 @@ public class MongoDbConnector implements DatabaseConnector {
 
         log.info("MongoDB restore completed successfully");
     }
+
 
     @Override
     public long getDatabaseSize(DatabaseConfig config) throws Exception {
@@ -151,4 +155,5 @@ public class MongoDbConnector implements DatabaseConnector {
     public boolean supportsDifferentialBackup() {
         return false;
     }
+
 }
