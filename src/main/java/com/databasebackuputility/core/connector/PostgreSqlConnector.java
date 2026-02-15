@@ -38,7 +38,7 @@ public class PostgreSqlConnector implements DatabaseConnector {
 
         ProcessBuilder pb = new ProcessBuilder();
         pb.command(
-                "pg_dump",
+                "C:\\Program Files\\PostgreSQL\\17\\bin\\pg_dump",
                 "--host=" + config.getHost(),
                 "--port=" + config.getPort(),
                 "--username=" + config.getUsername(),
@@ -75,9 +75,12 @@ public class PostgreSqlConnector implements DatabaseConnector {
     public void restore(DatabaseConfig config, String backupFilePath) throws Exception {
         log.info("Starting PostgreSQL restore from: {}", backupFilePath);
 
+        // 1️⃣ Create database if not exists
+        createDatabaseIfNotExists(config);
+
         ProcessBuilder pb = new ProcessBuilder();
         pb.command(
-                "pg_restore",
+                "C:\\Program Files\\PostgreSQL\\17\\bin\\pg_restore",
                 "--host=" + config.getHost(),
                 "--port=" + config.getPort(),
                 "--username=" + config.getUsername(),
@@ -138,5 +141,42 @@ public class PostgreSqlConnector implements DatabaseConnector {
     @Override
     public boolean supportsDifferentialBackup() {
         return false;
+    }
+
+    /**
+     * Creates the target database if it doesn't exist
+     * Connects to the default 'postgres' database to execute CREATE DATABASE
+     */
+    private void createDatabaseIfNotExists(DatabaseConfig config) throws Exception {
+        String targetDatabase = config.getDatabaseName();
+        
+        // Connect to the default 'postgres' database
+        String postgresUrl = String.format("jdbc:postgresql://%s:%d/postgres",
+                config.getHost(), config.getPort());
+        
+        try (Connection conn = DriverManager.getConnection(
+                postgresUrl,
+                config.getUsername(),
+                config.getPassword());
+             Statement stmt = conn.createStatement()) {
+            
+            // Check if database exists
+            String checkQuery = String.format(
+                    "SELECT 1 FROM pg_database WHERE datname = '%s'", targetDatabase);
+            
+            try (ResultSet rs = stmt.executeQuery(checkQuery)) {
+                if (!rs.next()) {
+                    // Database doesn't exist, create it
+                    log.info("Database '{}' does not exist. Creating it...", targetDatabase);
+                    stmt.executeUpdate("CREATE DATABASE " + targetDatabase);
+                    log.info("Database '{}' created successfully", targetDatabase);
+                } else {
+                    log.debug("Database '{}' already exists", targetDatabase);
+                }
+            }
+        } catch (Exception e) {
+            log.error("Failed to create database '{}': {}", targetDatabase, e.getMessage());
+            throw e;
+        }
     }
 }
