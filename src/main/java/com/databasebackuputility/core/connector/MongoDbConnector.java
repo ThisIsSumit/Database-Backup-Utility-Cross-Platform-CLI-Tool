@@ -112,11 +112,23 @@ public class MongoDbConnector implements DatabaseConnector {
             throw new IOException("Backup file not found: " + backupFilePath);
         }
 
+        // Extract original database name from backup filename
+        // Format: mongodb_originaldatabase_20260215_123456.archive
+        String fileName = backupFile.getName();
+        String originalDbName = extractOriginalDatabaseName(fileName);
+        String targetDb = config.getDatabaseName();
+        
+        if (originalDbName == null) {
+            log.warn("Could not determine original database name from filename. The backup may be restored to its original namespace.");
+            originalDbName = targetDb; // Assume same name if extraction fails
+        }
+        
+        log.info("Restoring from database '{}' to '{}'", originalDbName, targetDb);
+
         // Build mongorestore command
         // Note: NOT using --gzip here. RestoreService has already decompressed the file.
-        // The backup file at this point is an uncompressed .archive file.
+        // Use --nsFrom and --nsTo to rename the database namespace during restore.
         ProcessBuilder pb;
-        String targetDb = config.getDatabaseName(); // target DB
         if (config.getUsername() != null && config.getPassword() != null) {
             pb = new ProcessBuilder(
                     "C:\\mongodb-tools\\bin\\mongorestore",
@@ -127,7 +139,8 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--authenticationDatabase=" + (config.getAuthDatabase() != null ? config.getAuthDatabase() : "admin"),
                     "--archive=" + backupFile.getAbsolutePath(),
                     "--drop",
-                    "--nsInclude=" + targetDb + ".*"  // map all collections to target DB
+                    "--nsFrom=" + originalDbName + ".*",
+                    "--nsTo=" + targetDb + ".*"
             );
         } else {
             pb = new ProcessBuilder(
@@ -136,7 +149,8 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--port=" + config.getPort(),
                     "--archive=" + backupFile.getAbsolutePath(),
                     "--drop",
-                    "--nsInclude=" + targetDb + ".*"
+                    "--nsFrom=" + originalDbName + ".*",
+                    "--nsTo=" + targetDb + ".*"
             );
         }
 
@@ -159,6 +173,45 @@ public class MongoDbConnector implements DatabaseConnector {
         log.info("MongoDB restore completed successfully");
     }
 
+    /**
+     * Extract original database name from backup filename
+     * Format: mongodb_originaldatabase_timestamp.archive
+     * Example: mongodb_mydatabase_20260215_123456.archive -> mydatabase
+     */
+    private String extractOriginalDatabaseName(String fileName) {
+        // Remove extension(s): .archive, .gz, etc.
+        String nameWithoutExt = fileName.replaceAll("\\.(archive|gz|zip)$", "");
+        nameWithoutExt = nameWithoutExt.replaceAll("\\.(archive|gz|zip)$", ""); // Handle .archive.gz
+        
+        // Split by underscore: mongodb_mydatabase_20260215_123456
+        String[] parts = nameWithoutExt.split("_");
+        
+        // Format: [mongodb, databasename, date, time]
+        // The database name is between 'mongodb' and the timestamp
+        if (parts.length >= 3) {
+            // Find where timestamp starts (8 digits for date YYYYMMDD)
+            StringBuilder dbName = new StringBuilder();
+            for (int i = 1; i < parts.length; i++) {
+                // Check if this part looks like a date (8 digits)
+                if (parts[i].matches("\\d{8}")) {
+                    break; // Timestamp found, stop here
+                }
+                if (dbName.length() > 0) {
+                    dbName.append("_");
+                }
+                dbName.append(parts[i]);
+            }
+            
+            if (dbName.length() > 0) {
+                log.debug("Extracted database name '{}' from filename '{}'", dbName, fileName);
+                return dbName.toString();
+            }
+        }
+        
+        // Fallback: if parsing fails, log warning and use the target database name
+        log.warn("Could not extract original database name from filename: {}. Using same namespace.", fileName);
+        return null; // Will be handled by caller
+    }
 
     @Override
     public long getDatabaseSize(DatabaseConfig config) throws Exception {
