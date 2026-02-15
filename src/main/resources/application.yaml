@@ -73,8 +73,8 @@ notification:
 
   email:
     enabled: ${EMAIL_ENABLED:false}
-    # host: ${EMAIL_HOST:smtp.gmail.com}
-    # port: ${EMAIL_PORT:587}
+    host: ${EMAIL_HOST:smtp.gmail.com}
+    port: ${EMAIL_PORT:587}
     username: ${EMAIL_USERNAME:}
     password: ${EMAIL_PASSWORD:}
     from: ${EMAIL_FROM:}
