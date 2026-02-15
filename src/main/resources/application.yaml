@@ -11,6 +11,7 @@ spring:
     port: ${EMAIL_PORT:587}
     username: ${EMAIL_USERNAME:}
     password: ${EMAIL_PASSWORD:}
+    protocol: smtp
     properties:
       mail:
         smtp:
@@ -18,9 +19,10 @@ spring:
           starttls:
             enable: true
             required: true
-          connectiontimeout: 10000
-          timeout: 10000
-          writetimeout: 10000
+          connectiontimeout: 20000
+          timeout: 20000
+          writetimeout: 20000
+          port: 587
 
 # Backup Configuration
 backup:
@@ -75,8 +77,8 @@ notification:
     # port: ${EMAIL_PORT:587}
     username: ${EMAIL_USERNAME:}
     password: ${EMAIL_PASSWORD:}
-    # from: ${EMAIL_FROM:}
-    # to: ${EMAIL_TO:}
+    from: ${EMAIL_FROM:}
+    to: ${EMAIL_TO:}
 
 # Logging Configuration
 logging:
