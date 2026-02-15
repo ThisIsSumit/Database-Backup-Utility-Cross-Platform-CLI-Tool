@@ -67,10 +67,24 @@ public class MongoDbConnector implements DatabaseConnector {
             );
         }
 
-        pb.redirectErrorStream(true); // merge stdout and stderr
+        // DO NOT use redirectErrorStream(true) - it corrupts the archive by mixing stderr with stdout!
+        // stdout = archive data, stderr = progress messages
         Process process = pb.start();
 
-        // Pipe output directly to provided OutputStream
+        // Handle stderr in a separate thread to avoid blocking and to log progress
+        Thread errorHandler = new Thread(() -> {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    log.debug("mongodump: {}", line);
+                }
+            } catch (IOException e) {
+                log.warn("Error reading mongodump stderr: {}", e.getMessage());
+            }
+        });
+        errorHandler.start();
+
+        // Pipe ONLY stdout (archive data) to the provided OutputStream
         try (InputStream is = process.getInputStream()) {
             byte[] buffer = new byte[8192];
             int bytesRead;
@@ -80,6 +94,8 @@ public class MongoDbConnector implements DatabaseConnector {
         }
 
         int exitCode = process.waitFor();
+        errorHandler.join(); // Wait for error handler to finish
+        
         if (exitCode != 0) {
             throw new IOException("mongodump failed with exit code: " + exitCode);
         }
