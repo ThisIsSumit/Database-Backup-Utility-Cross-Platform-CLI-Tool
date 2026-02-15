@@ -6,6 +6,22 @@ spring:
     web-application-type: none
     banner-mode: off
 
+  mail:
+    host: ${EMAIL_HOST:smtp.gmail.com}
+    port: ${EMAIL_PORT:587}
+    username: ${EMAIL_USERNAME:}
+    password: ${EMAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+
 # Backup Configuration
 backup:
   default-output-dir: ./backups
@@ -49,18 +65,18 @@ storage:
 # Notification Configuration
 notification:
   slack:
-    enabled: false
+    enabled: ${SLACK_ENABLED:true}
     webhook-url: ${SLACK_WEBHOOK_URL:}
     channel: ${SLACK_CHANNEL:#backups}
 
   email:
-    enabled: false
-    host: ${EMAIL_HOST:smtp.gmail.com}
-    port: ${EMAIL_PORT:587}
+    enabled: ${EMAIL_ENABLED:false}
+    # host: ${EMAIL_HOST:smtp.gmail.com}
+    # port: ${EMAIL_PORT:587}
     username: ${EMAIL_USERNAME:}
     password: ${EMAIL_PASSWORD:}
-    from: ${EMAIL_FROM:backup@example.com}
-    to: ${EMAIL_TO:admin@example.com}
+    # from: ${EMAIL_FROM:}
+    # to: ${EMAIL_TO:}
 
 # Logging Configuration
 logging:
@@ -78,8 +94,8 @@ logging:
 # Security
 security:
   encryption:
-    enabled: true
-    algorithm: AES
+    enabled: ${ENCRYPTION_ENABLED:true}
+    algorithm: ${ENCRYPTION_ALGORITHM:AES}
     key: ${ENCRYPTION_KEY:changeme12345678} # Must be 16, 24, or 32 bytes
 
 # Scheduling
