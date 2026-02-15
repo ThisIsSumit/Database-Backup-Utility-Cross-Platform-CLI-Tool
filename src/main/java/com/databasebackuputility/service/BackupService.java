@@ -141,6 +141,16 @@ public class BackupService {
 
     /**
      * Create temporary backup file
+     * 
+     * MongoDB Flow:
+     * 1. mongodump --archive → produces uncompressed BSON archive (.archive file)
+     * 2. CompressionService.compress() → compresses to .archive.gz (if compression enabled)
+     * 3. StorageService.store() → saves final file to storage
+     * 
+     * Restore Flow:
+     * 1. StorageService.retrieve() → gets .archive.gz file
+     * 2. CompressionService.decompress() → decompresses to .archive file  
+     * 3. mongorestore --archive → reads uncompressed BSON archive
      */
     private File createTempBackupFile(DatabaseConfig config) throws IOException {
         String timestamp = LocalDateTime.now()

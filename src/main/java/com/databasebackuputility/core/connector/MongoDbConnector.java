@@ -1,15 +1,22 @@
 package com.databasebackuputility.core.connector;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+
+import org.bson.Document;
+import org.springframework.stereotype.Component;
+
 import com.databasebackuputility.model.BackupType;
 import com.databasebackuputility.model.DatabaseConfig;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
-import lombok.extern.slf4j.Slf4j;
-import org.bson.Document;
-import org.springframework.stereotype.Component;
 
-import java.io.*;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * MongoDB database connector implementation
@@ -36,6 +43,8 @@ public class MongoDbConnector implements DatabaseConnector {
         log.info("Starting MongoDB backup for database: {}", config.getDatabaseName());
 
         // Build mongodump command
+        // Note: NOT using --gzip here. CompressionService will handle compression separately.
+        // This ensures proper decompression flow: .archive.gz -> decompress -> .archive -> restore
         ProcessBuilder pb;
         if (config.getUsername() != null && config.getPassword() != null) {
             pb = new ProcessBuilder(
@@ -46,8 +55,7 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--password=" + config.getPassword(),
                     "--authenticationDatabase=" + (config.getAuthDatabase() != null ? config.getAuthDatabase() : "admin"),
                     "--db=" + config.getDatabaseName(),
-                    "--archive",  // output as mongodump archive
-                    "--gzip"      // compress archive
+                    "--archive"  // output as uncompressed mongodump archive
             );
         } else {
             pb = new ProcessBuilder(
@@ -55,8 +63,7 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
                     "--db=" + config.getDatabaseName(),
-                    "--archive",
-                    "--gzip"
+                    "--archive"  // output as uncompressed mongodump archive
             );
         }
 
@@ -90,6 +97,8 @@ public class MongoDbConnector implements DatabaseConnector {
         }
 
         // Build mongorestore command
+        // Note: NOT using --gzip here. RestoreService has already decompressed the file.
+        // The backup file at this point is an uncompressed .archive file.
         ProcessBuilder pb;
         String targetDb = config.getDatabaseName(); // target DB
         if (config.getUsername() != null && config.getPassword() != null) {
@@ -101,7 +110,6 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--password=" + config.getPassword(),
                     "--authenticationDatabase=" + (config.getAuthDatabase() != null ? config.getAuthDatabase() : "admin"),
                     "--archive=" + backupFile.getAbsolutePath(),
-                    "--gzip",
                     "--drop",
                     "--nsInclude=" + targetDb + ".*"  // map all collections to target DB
             );
@@ -111,7 +119,6 @@ public class MongoDbConnector implements DatabaseConnector {
                     "--host=" + config.getHost(),
                     "--port=" + config.getPort(),
                     "--archive=" + backupFile.getAbsolutePath(),
-                    "--gzip",
                     "--drop",
                     "--nsInclude=" + targetDb + ".*"
             );
