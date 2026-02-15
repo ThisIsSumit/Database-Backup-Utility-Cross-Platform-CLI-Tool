@@ -42,10 +42,11 @@ public class PostgreSqlConnector implements DatabaseConnector {
                 "--host=" + config.getHost(),
                 "--port=" + config.getPort(),
                 "--username=" + config.getUsername(),
-                "--format=custom",
+                "--format=plain",  // Changed to plain SQL format
                 "--no-owner",
                 "--no-acl",
                 "--verbose",
+                "--inserts",  // Use INSERT statements instead of COPY for better compatibility
                 config.getDatabaseName()
         );
 
@@ -77,19 +78,40 @@ public class PostgreSqlConnector implements DatabaseConnector {
 
         // 1️⃣ Create database if not exists
         createDatabaseIfNotExists(config);
+        System.out.println("Database created if it did not exist: " + config.getDatabaseName());
 
+        // Determine if the file is plain SQL format or custom format
+        boolean isPlainSql = backupFilePath.endsWith(".sql");
+        
         ProcessBuilder pb = new ProcessBuilder();
-        pb.command(
-                "C:\\Program Files\\PostgreSQL\\17\\bin\\pg_restore",
-                "--host=" + config.getHost(),
-                "--port=" + config.getPort(),
-                "--username=" + config.getUsername(),
-                "--dbname=" + config.getDatabaseName(),
-                "--clean",
-                "--if-exists",
-                "--verbose",
-                backupFilePath
-        );
+        
+        if (isPlainSql) {
+            // Use psql for plain SQL files
+            log.info("Detected plain SQL format, using psql for restore");
+            pb.command(
+                    "C:\\Program Files\\PostgreSQL\\17\\bin\\psql",
+                    "--host=" + config.getHost(),
+                    "--port=" + config.getPort(),
+                    "--username=" + config.getUsername(),
+                    "--dbname=" + config.getDatabaseName(),
+                    "--file=" + backupFilePath,
+                    "--echo-errors"
+            );
+        } else {
+            // Use pg_restore for custom format files
+            log.info("Detected custom format, using pg_restore");
+            pb.command(
+                    "C:\\Program Files\\PostgreSQL\\17\\bin\\pg_restore",
+                    "--host=" + config.getHost(),
+                    "--port=" + config.getPort(),
+                    "--username=" + config.getUsername(),
+                    "--dbname=" + config.getDatabaseName(),
+                    "--clean",
+                    "--if-exists",
+                    "--verbose",
+                    backupFilePath
+            );
+        }
 
         pb.environment().put("PGPASSWORD", config.getPassword());
         pb.redirectErrorStream(true);
@@ -166,9 +188,9 @@ public class PostgreSqlConnector implements DatabaseConnector {
             
             try (ResultSet rs = stmt.executeQuery(checkQuery)) {
                 if (!rs.next()) {
-                    // Database doesn't exist, create it
+                    // Database doesn't exist, create it using template0 to avoid collation issues
                     log.info("Database '{}' does not exist. Creating it...", targetDatabase);
-                    stmt.executeUpdate("CREATE DATABASE " + targetDatabase);
+                    stmt.executeUpdate("CREATE DATABASE " + targetDatabase + " TEMPLATE template0");
                     log.info("Database '{}' created successfully", targetDatabase);
                 } else {
                     log.debug("Database '{}' already exists", targetDatabase);

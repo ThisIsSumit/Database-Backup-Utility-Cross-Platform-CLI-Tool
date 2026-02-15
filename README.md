@@ -164,7 +164,7 @@ export ENCRYPTION_KEY=your-32-character-encryption-key
 
 **MySQL:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mysql \
   --host localhost \
   --port 3306 \
@@ -177,7 +177,7 @@ java -jar dbbackup.jar backup \
 
 **PostgreSQL:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type postgresql \
   --host localhost \
   --database mydb \
@@ -188,7 +188,7 @@ java -jar dbbackup.jar backup \
 
 **MongoDB:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mongodb \
   --host localhost \
   --port 27017 \
@@ -200,7 +200,7 @@ java -jar dbbackup.jar backup \
 
 **SQLite:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type sqlite \
   --database mydb \
   --file /path/to/database.db \
@@ -210,7 +210,7 @@ java -jar dbbackup.jar backup \
 #### 2. Restore Database
 
 ```bash
-java -jar dbbackup.jar restore \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  restore \
   --backup-file /backups/mysql_mydb_20241215_143022.sql.gz \
   --type mysql \
   --host localhost \
@@ -222,13 +222,13 @@ java -jar dbbackup.jar restore \
 #### 3. List Backups
 
 ```bash
-java -jar dbbackup.jar list
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  list
 ```
 
 #### 4. Test Connection
 
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mysql \
   --host localhost \
   --database mydb \
@@ -243,7 +243,7 @@ java -jar dbbackup.jar backup \
 
 **GZIP Compression (Recommended):**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mongodb \
   --host localhost \
   --database mydb \
@@ -254,7 +254,7 @@ java -jar dbbackup.jar backup \
 
 **ZIP Compression:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mysql \
   --host localhost \
   --database mydb \
@@ -266,7 +266,7 @@ java -jar dbbackup.jar backup \
 
 **No Compression:**
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type postgresql \
   --database mydb \
   --compress none
@@ -312,7 +312,7 @@ MongoDB backups use a **two-stage process**:
 #### Backup to AWS S3
 
 ```bash
-java -jar dbbackup.jar backup \
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mysql \
   --host localhost \
   --database mydb \
@@ -328,10 +328,10 @@ Create a cron job:
 
 ```bash
 # Daily backup at 2 AM
-0 2 * * * /usr/bin/java -jar /path/to/dbbackup.jar backup --type mysql --host localhost --database mydb --user root --password secret --compress gzip
+0 2 * * * /usr/bin/java -jar /path/to/target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup --type mysql --host localhost --database mydb --user root --password secret --compress gzip
 
 # Weekly full backup on Sunday at 3 AM
-0 3 * * 0 /usr/bin/java -jar /path/to/dbbackup.jar backup --type mysql --host localhost --database mydb --user root --password secret --backup-type full --compress gzip
+0 3 * * 0 /usr/bin/java -jar /path/to/target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup --type mysql --host localhost --database mydb --user root --password secret --backup-type full --compress gzip
 ```
 
 #### Backup Script Example
@@ -346,7 +346,7 @@ DATE=$(date +%Y%m%d)
 LOG_FILE="$BACKUP_DIR/backup_$DATE.log"
 
 # Backup MySQL
-java -jar /path/to/dbbackup.jar backup \
+java -jar /path/to/target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup \
   --type mysql \
   --host localhost \
   --database production_db \
@@ -461,17 +461,17 @@ mvn verify
 
 1. **Test MySQL Backup:**
 ```bash
-java -jar dbbackup.jar backup --type mysql --host localhost --database testdb --user root --password test123 --test-connection
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup --type mysql --host localhost --database testdb --user root --password test123 --test-connection
 ```
 
 2. **Test Compression:**
 ```bash
-java -jar dbbackup.jar backup --type mysql --host localhost --database testdb --user root --password test123 --compress gzip
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup --type mysql --host localhost --database testdb --user root --password test123 --compress gzip
 ```
 
 3. **Test Restore:**
 ```bash
-java -jar dbbackup.jar restore --backup-file backups/mysql_testdb_20241215.sql.gz --type mysql --host localhost --database testdb_restored --user root --password test123 --validate-only
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  restore --backup-file backups/mysql_testdb_20241215.sql.gz --type mysql --host localhost --database testdb_restored --user root --password test123 --validate-only
 ```
 
 ## Compression Details
@@ -582,7 +582,7 @@ Error: Java heap space
 ```
 **Solution:** Increase JVM memory
 ```bash
-java -Xmx2G -jar dbbackup.jar backup ...
+java -Xmx2G -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  backup ...
 ```
 
 #### 5. MongoDB Restore Shows 0 Documents
@@ -606,7 +606,7 @@ Failed: corruption found in archive
 ### Enable Debug Logging
 
 ```bash
-java -jar dbbackup.jar --logging.level.com.dbbackup=DEBUG backup ...
+java -jar target/database-backup-utility-0.0.1-SNAPSHOT.jar  --logging.level.com.dbbackup=DEBUG backup ...
 ```
 
 Or edit `application.yml`:

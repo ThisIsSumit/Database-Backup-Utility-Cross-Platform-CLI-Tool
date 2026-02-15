@@ -34,11 +34,9 @@ public class RestoreService {
             // Get connector
             DatabaseConnector connector = getConnector(config);
 
-            // Test connection
-            if (!connector.testConnection(config)) {
-                log.error("Database connection test failed");
-                return false;
-            }
+            // Note: Skip connection test for restore operations
+            // The connector's restore method will create the database if needed
+            log.debug("Skipping connection test - database will be created during restore if needed");
 
             // Retrieve backup file from storage
             File backupFile = storageService.retrieve(backupPath);
